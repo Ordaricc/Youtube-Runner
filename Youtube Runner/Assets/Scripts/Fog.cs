@@ -32,10 +32,14 @@ public class Fog : MonoBehaviour
         }
     }
 
-    public void ActivateFog()
+    public void ActivateFog(bool isAnimationOnly)
     {
         isFogOn = true;
         fogParent.SetActive(true);
+
+        if (isAnimationOnly)
+            return;
+
         Lantern.Instance.ActivateLantern();
 
         AchievementsManager.Instance.UnlockAchievement(Achievement.AchievemntTypes.seeFog);

@@ -27,7 +27,7 @@ public class UnlockEnemiesManager : MonoBehaviour
                 break;
 
             case 2:
-                Fog.Instance.ActivateFog();
+                Fog.Instance.ActivateFog(false);
                 break;
 
             case 3:
