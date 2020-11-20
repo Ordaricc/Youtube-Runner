@@ -18,6 +18,8 @@ public class Thunderstorm : MonoBehaviour
 
     public void ActivateThunderstorm()
     {
+        AchievementsManager.Instance.UnlockAchievement(Achievement.AchievemntTypes.thunderstorm);
+
         nightPanelAnimator.Play("FadeInNight");
         StartCoroutine(ThunderstormLoop());
     }

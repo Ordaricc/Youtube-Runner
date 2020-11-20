@@ -54,6 +54,7 @@ public class MenuManager : MonoBehaviour
         CloseAllMenus();
         topPanelText.text = "ACHIEVEMENTS";
         achievementsMenu.SetActive(true);
+        MenuInputManager.Instance.ChangeIsShopOpenTo(false);
     }
 
     [ContextMenu("Open Urls Menu")]
@@ -73,6 +74,7 @@ public class MenuManager : MonoBehaviour
 
     private void OpenShopMenu()
     {
+        MenuInputManager.Instance.ChangeIsShopOpenTo(true);
         shopMenu.SetActive(true);
         topPanelText.text = "SHOP";
     }

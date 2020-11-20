@@ -5,16 +5,14 @@ public class Achievement : MonoBehaviour
 {
     private Image img;
 
-    public enum AchievemntTypes { seeFog, dummy2 }
+    public enum AchievemntTypes { undefined, ocotpus, seeFog, horca, wind, whirlwind, thunderstorm }
 
     [SerializeField] private AchievemntTypes achievementType;
     public AchievemntTypes _achievementType { get { return achievementType; } }
 
     [SerializeField] private string trophyName;
     [SerializeField] private string trophyDescription;
-
-    public bool isUnlocked { get; private set; }
-
+    
     private void Awake()
     {
         img = GetComponent<Image>();
@@ -30,7 +28,6 @@ public class Achievement : MonoBehaviour
         else
         {
             img.color = Color.white;
-            isUnlocked = true;
         }
     }
 
@@ -42,6 +39,6 @@ public class Achievement : MonoBehaviour
 
     public void OnTouchTrophy()
     {
-        AchievementsManager.Instance.UpdateTrophyTextsUI(trophyName, trophyDescription);
+        AchievementsUIManager.Instance.UpdateTrophyTextsUI(trophyName, trophyDescription);
     }
 }

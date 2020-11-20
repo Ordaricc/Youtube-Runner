@@ -80,6 +80,8 @@ public class Wind : MonoBehaviour
 
     public void ActivateWind()
     {
+        AchievementsManager.Instance.UnlockAchievement(Achievement.AchievemntTypes.wind);
+
         isWindUnlocked = true;
         isWindOn = true;
         windForce = Random.Range(windForceMin, windForceMax);

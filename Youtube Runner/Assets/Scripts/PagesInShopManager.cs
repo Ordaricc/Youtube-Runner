@@ -45,7 +45,7 @@ public class PagesInShopManager : MonoBehaviour
         UpdateButtonsInteractability();
     }
 
-    private void UpdateButtonsInteractability()
+    public void UpdateButtonsInteractability()
     {
         turnLeftPageButton.interactable = indexOfPagesInShopWithCurrentlyOpenPage > 0;
         turnRightPageButton.interactable = pagesInShop.Length - 1 > indexOfPagesInShopWithCurrentlyOpenPage;

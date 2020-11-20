@@ -114,6 +114,7 @@
     <Compile Include="Assets\Scripts\Wind.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\SkewTextExample.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\Benchmark04.cs" />
+    <Compile Include="Assets\Scripts\CameraAdjuster.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TextMeshSpawner.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\VertexShakeB.cs" />
     <Compile Include="Assets\Scripts\PlayerMoney.cs" />
@@ -139,7 +140,8 @@
     <Compile Include="Assets\Scripts\ShopItem.cs" />
     <Compile Include="Assets\Scripts\MySceneManager.cs" />
     <Compile Include="Assets\Scripts\MainMenuWeatherEvents.cs" />
-    <Compile Include="Assets\Scripts\CameraAdjuster.cs" />
+    <Compile Include="Assets\AchievementsUIManager.cs" />
+    <Compile Include="Assets\MenuInputManager.cs" />
   </ItemGroup>
   <ItemGroup>
      <None Include="Assets\TextMesh Pro\Resources\Shaders\TMPro.cginc" />

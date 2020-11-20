@@ -38,7 +38,8 @@ public class GetMobManager : MonoBehaviour
         {
             isOctopus = false;
             entityToChoose = entitiesPrefabs[Random.Range(1, 2 + howManyEnemiesUnlocked)];
-            if (entityToChoose.GetComponent<EntityType>().entityType == EntityType.EntityTypes.octopus)
+            EntityType.EntityTypes entityType = entityToChoose.GetComponent<EntityType>().entityType;
+            if (entityType == EntityType.EntityTypes.octopus)
                 isOctopus = true;
 
             if (previousSpawnWasOctopus && isOctopus)
@@ -48,9 +49,30 @@ public class GetMobManager : MonoBehaviour
             else
                 previousSpawnWasOctopus = false;
 
+            UnlockAchievement(entityType);
+
             break;
         }
+        
         return entityToChoose;
+    }
+
+    private void UnlockAchievement(EntityType.EntityTypes entityType)
+    {
+        switch (entityType)
+        {
+            case EntityType.EntityTypes.octopus:
+                AchievementsManager.Instance.UnlockAchievement(Achievement.AchievemntTypes.ocotpus);
+                break;
+
+            case EntityType.EntityTypes.orca:
+                AchievementsManager.Instance.UnlockAchievement(Achievement.AchievemntTypes.horca);
+                break;
+
+            case EntityType.EntityTypes.whirlwind:
+                AchievementsManager.Instance.UnlockAchievement(Achievement.AchievemntTypes.whirlwind);
+                break;
+        }
     }
 
     public void AddEnemy()

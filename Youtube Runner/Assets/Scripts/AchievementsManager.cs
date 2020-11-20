@@ -1,14 +1,10 @@
 ﻿using System;
 using UnityEngine;
-using TMPro;
 
 public class AchievementsManager : MonoBehaviour
 {
     public static AchievementsManager Instance;
-
-    [SerializeField] private TextMeshProUGUI trophyNameText;
-    [SerializeField] private TextMeshProUGUI trophyDescriptionText;
-
+    
     [SerializeField] private Achievement[] trophies;
 
     private void Awake()
@@ -18,6 +14,9 @@ public class AchievementsManager : MonoBehaviour
 
     public void UnlockAchievement(Achievement.AchievemntTypes achievementType)
     {
+        if (PlayerPrefs.GetInt(achievementType.ToString()) == 1)
+            return;
+
         Achievement achievementToUnlock = 
             Array.Find(trophies, dummyTrophy => dummyTrophy._achievementType == achievementType);
 
@@ -27,13 +26,6 @@ public class AchievementsManager : MonoBehaviour
             return;
         }
 
-        if (!achievementToUnlock.isUnlocked)
-            achievementToUnlock.UnlockThisAchievement();
-    }
-
-    public void UpdateTrophyTextsUI(string trophyName, string trophyDescription)
-    {
-        trophyNameText.text = trophyName;
-        trophyDescriptionText.text = trophyDescription;
+        achievementToUnlock.UnlockThisAchievement();
     }
 }
