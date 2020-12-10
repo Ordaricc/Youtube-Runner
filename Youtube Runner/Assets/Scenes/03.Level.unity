@@ -11678,6 +11678,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 801b31b08111e0f429fd8db39a789695, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  rightButton: {fileID: 854680669}
+  leftButton: {fileID: 851180683}
 --- !u!114 &1392785167
 MonoBehaviour:
   m_ObjectHideFlags: 0

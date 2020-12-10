@@ -21,6 +21,7 @@ public class StartGameManager : MonoBehaviour
             m.StartScript();
         }
 
+        MenuInputManager.Instance.enabled = false;
         enabled = false;
     }
 }

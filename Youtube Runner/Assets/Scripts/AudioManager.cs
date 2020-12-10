@@ -58,6 +58,34 @@ public class AudioManager : MonoBehaviour
             soundToStop.source.Stop();
     }
 
+    //public void PlayClipByNameWithForeach(string _clipName)
+    //{
+    //    Sound soundToPlay = null;
+
+    //    foreach (Sound s in sounds)
+    //    {
+    //        if (s.clipName == _clipName)
+    //            soundToPlay = s;
+    //    }
+        
+    //    if (soundToPlay != null)
+    //        soundToPlay.source.Play();
+    //}
+
+    //public void StopClipByNameWithForeach(string _clipName)
+    //{
+    //    Sound soundToStop = null;
+
+    //    foreach (Sound s in sounds)
+    //    {
+    //        if (s.clipName == _clipName)
+    //            soundToStop = s;
+    //    }
+
+    //    if (soundToStop != null)
+    //        soundToStop.source.Play();
+    //}
+
     public void ToggleMute()
     {
         if (AudioListener.volume == 1)
