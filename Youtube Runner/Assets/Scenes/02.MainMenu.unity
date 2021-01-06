@@ -815,11 +815,11 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 799386448}
-  - component: {fileID: 799386449}
   - component: {fileID: 799386450}
   - component: {fileID: 799386452}
   - component: {fileID: 799386451}
   - component: {fileID: 799386453}
+  - component: {fileID: 799386449}
   m_Layer: 0
   m_Name: Manager
   m_TagString: Untagged
@@ -850,7 +850,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 799386447}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e746943670dc04e40ad140f954b8bdd6, type: 3}
+  m_Script: {fileID: 11500000, guid: 2e68459959b547b4d922ee4c82647f15, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!114 &799386450
@@ -1107,9 +1107,9 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 799386449}
-        m_TargetAssemblyTypeName: SceneFunctions, Assembly-CSharp
-        m_MethodName: ChangeSceneByAddingIndex
-        m_Mode: 3
+        m_TargetAssemblyTypeName: MainMenuManager, Assembly-CSharp
+        m_MethodName: OnPressPlay
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
