@@ -47,7 +47,7 @@ public class UnlockEnemiesManager : MonoBehaviour
                 break;
 
             case 7:
-                NPCManager.Instance.ActivateNPC(NPCdialoguesMagazine.Instance.GetDialogue("test"));
+                NPCQuests.OnUnlockAllEnemies();
                 break;
         }
     }

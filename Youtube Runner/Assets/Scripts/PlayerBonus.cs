@@ -3,12 +3,7 @@
 public class PlayerBonus : MonoBehaviour
 {
     public static PlayerBonus Instance;
-
-    [SerializeField] private Sprite bootySprite;
-    [SerializeField] private Sprite lanternSprite;
-    [SerializeField] private Sprite netSprite;
-
-    [SerializeField] private GameObject bonusItemPrefab;
+    
     [SerializeField] private int bootiesInARowCollected;
     [SerializeField] private int bootiesInARowNeededForBonus = 5;
 
@@ -46,33 +41,26 @@ public class PlayerBonus : MonoBehaviour
             if (randomNum <= 25 && Nets.Instance.netsLevel > 0 && Nets.Instance.canAddNet)
             {
                 Nets.Instance.AddNet();
-                SpawnBonusAnimationBasedOnSprite(netSprite);
+                AnimationPrefabs.Instance.SpawnAnimation("net");
                 break;
             }
             else if (randomNum <= 50 && Lantern.Instance.lanternLevel > 0 && Fog.Instance.isFogOn)
             {
                 Lantern.Instance.AddExtraFuel();
-                SpawnBonusAnimationBasedOnSprite(lanternSprite);
+                AnimationPrefabs.Instance.SpawnAnimation("lantern");
                 break;
             }
             else
             {
                 bonusMoney = Random.Range(1, 11);
-                SpawnBonusAnimationBasedOnSprite(bootySprite);
+                AnimationPrefabs.Instance.SpawnAnimation("booty");
                 break;
             }
         }
         
         return bonusMoney;
     }
-
-    private void SpawnBonusAnimationBasedOnSprite(Sprite spriteToUse)
-    {
-        GameObject bonusAnimationSpawned = Instantiate(bonusItemPrefab, transform.position, Quaternion.identity);
-        bonusAnimationSpawned.GetComponentInChildren<SpriteRenderer>().sprite = spriteToUse;
-        Destroy(bonusAnimationSpawned, 2);
-    }
-
+    
     public void ResetBootiesCollected()
     {
         bootiesInARowCollected = 0;

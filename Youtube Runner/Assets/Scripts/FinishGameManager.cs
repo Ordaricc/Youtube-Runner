@@ -30,6 +30,7 @@ public class FinishGameManager : MonoBehaviour
     
     public void CheckIfPlayerCanRestartGame()
     {
+        NPCQuests.OnGameEnd();
         bool isGonnaWatchAd = WatchAdWhenLosing.Instance.ShouldPlayerWatchInterstitialAd();
         if (!isGonnaWatchAd)
             RestartGame();

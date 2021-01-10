@@ -8,8 +8,13 @@ public class NPCManager : MonoBehaviour
     [SerializeField] private NPC currentNPC;
     [SerializeField] private GameObject dialogueBox;
     [SerializeField] private TextMeshProUGUI dialogueBoxText;
+    public TextMeshProUGUI _dialogueBoxText { get { return dialogueBoxText; } }
+
     [SerializeField] private SNPCdialogue currentDialogue;
     private int currentDialogueIndex;
+
+    public delegate void OnDialogueLoad(int currentDialogueIndex);
+    public OnDialogueLoad OnDialogueLoadEvent;
 
     private void Awake()
     {
@@ -35,10 +40,12 @@ public class NPCManager : MonoBehaviour
         if (currentDialogue.GetDialogueLine(currentDialogueIndex, out string dialogueLine))
         {
             dialogueBoxText.text = dialogueLine;
+            OnDialogueLoadEvent?.Invoke(currentDialogueIndex);
             currentDialogueIndex++;
         }
         else
         {
+            OnDialogueLoadEvent = null;
             currentDialogueIndex = 0;
             EndDialogue();
         }

@@ -22,6 +22,7 @@ public class StartGameManager : MonoBehaviour
         }
 
         MenuInputManager.Instance.enabled = false;
+        NPCQuests.OnGameStart();
         enabled = false;
     }
 }

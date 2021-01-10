@@ -3939,8 +3939,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0b2ffd8faf3f2e54b94810ac64b7154c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  lostLifeAnimationPrefab: {fileID: 4525751285802630740, guid: 558a1fefd516dfd4ab464651da5e427d, type: 3}
-  headstartAnimationPrefab: {fileID: 4525751285802630740, guid: 4bc0118cd64b8b5409db562aa567e7a9, type: 3}
   lives: 1
 --- !u!61 &459855620
 BoxCollider2D:
@@ -3993,12 +3991,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ed734127200e2464c809ea8e695d4e62, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bootySprite: {fileID: 21300000, guid: 9722236d9cfa66d41ba80bd1f7d293cc, type: 3}
-  lanternSprite: {fileID: 21300000, guid: 40382941ef795c54fa7fa9ef4a32c1b8, type: 3}
-  netSprite: {fileID: 21300000, guid: 4c8bd4034a432cc4cb041280c17f2bb0, type: 3}
-  bonusItemPrefab: {fileID: 4525751285802630740, guid: 91f457ae54bbcb5429ce68b24dc83e21, type: 3}
   bootiesInARowCollected: 0
-  bootiesInARowNeededForBonus: 5
+  bootiesInARowNeededForBonus: 10
 --- !u!114 &459855623
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5646,9 +5640,9 @@ MonoBehaviour:
   m_fontSize: 36
   m_fontSizeBase: 36
   m_fontWeight: 400
-  m_enableAutoSizing: 0
+  m_enableAutoSizing: 1
   m_fontSizeMin: 18
-  m_fontSizeMax: 72
+  m_fontSizeMax: 36
   m_fontStyle: 0
   m_HorizontalAlignment: 1
   m_VerticalAlignment: 256
@@ -7487,6 +7481,7 @@ GameObject:
   - component: {fileID: 831157520}
   - component: {fileID: 831157521}
   - component: {fileID: 831157522}
+  - component: {fileID: 831157523}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -7723,7 +7718,26 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dialogues:
-  - {fileID: 11400000, guid: acbe77b01723b7549ac50089028405b6, type: 2}
+  - {fileID: 11400000, guid: 7ada7cf289346784aa4647f8d797a844, type: 2}
+  - {fileID: 11400000, guid: ffedbcdb361656f4c92eaad97aa87882, type: 2}
+--- !u!114 &831157523
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 831157508}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f8e52cb8c2425de4fafed55667188a01, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  animationPrefab: {fileID: 4525751285802630740, guid: 91f457ae54bbcb5429ce68b24dc83e21, type: 3}
+  bootySprite: {fileID: 21300000, guid: 9722236d9cfa66d41ba80bd1f7d293cc, type: 3}
+  heartSprite: {fileID: 21300000, guid: 63b296cfe0e005b41802bf483e921de7, type: 3}
+  headstartSprite: {fileID: 21300000, guid: 4f66a96e3d2dec149a82214cb6bb7fc6, type: 3}
+  lanternSprite: {fileID: 21300000, guid: 40382941ef795c54fa7fa9ef4a32c1b8, type: 3}
+  netSprite: {fileID: 21300000, guid: 4c8bd4034a432cc4cb041280c17f2bb0, type: 3}
 --- !u!1 &851180681
 GameObject:
   m_ObjectHideFlags: 0
@@ -11680,6 +11694,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rightButton: {fileID: 854680669}
   leftButton: {fileID: 851180683}
+  marginForSwipe: 25
 --- !u!114 &1392785167
 MonoBehaviour:
   m_ObjectHideFlags: 0

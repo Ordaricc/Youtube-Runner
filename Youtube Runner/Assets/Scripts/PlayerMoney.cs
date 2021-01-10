@@ -21,6 +21,11 @@ public class PlayerMoney : MonoBehaviour
         currentMoney += PlayerBonus.Instance.OnCollectBooty();
     }
 
+    public void AddMoney(int moneyToAdd)
+    {
+        currentMoney += moneyToAdd;
+    }
+
     public void AddMoneyAndSave(int moneyToAdd)
     {
         currentMoney += moneyToAdd;
