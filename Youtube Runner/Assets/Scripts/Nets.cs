@@ -13,6 +13,8 @@ public class Nets : MonoBehaviour
     
     public bool canAddNet { get { return netsAvailable < netsLevel; } }
 
+    public int defeatedEnemies { get; private set; }
+
     private void Awake()
     {
         Instance = this;
@@ -62,6 +64,10 @@ public class Nets : MonoBehaviour
     {
         if (netsAvailable > 0)
         {
+            defeatedEnemies++;
+            if (defeatedEnemies == 5)
+                AchievementsManager.Instance.UnlockAchievement(Achievement.AchievemntTypes.defeatEnemiesInSingleRun);
+
             netsAvailable--;
             UpdateNetsUI();
             return true;

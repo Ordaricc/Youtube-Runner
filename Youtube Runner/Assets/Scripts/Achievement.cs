@@ -5,7 +5,8 @@ public class Achievement : MonoBehaviour
 {
     private Image img;
 
-    public enum AchievemntTypes { undefined, ocotpus, seeFog, horca, wind, whirlwind, thunderstorm }
+    public enum AchievemntTypes { undefined, ocotpus, seeFog, horca, wind,
+        whirlwind, thunderstorm, defeatEnemiesInSingleRun, dontLoseBootyInARun, buyAllItems }
 
     [SerializeField] private AchievemntTypes achievementType;
     public AchievemntTypes _achievementType { get { return achievementType; } }

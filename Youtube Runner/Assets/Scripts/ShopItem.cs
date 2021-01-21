@@ -15,6 +15,7 @@ public class ShopItem : MonoBehaviour
     [SerializeField] private int itemPrice = 10;
     [SerializeField] private int itemLevel;
     [SerializeField] private int itemLevelMax = 5;
+    public int _itemLevelMax { get { return itemLevelMax; } }
 
     private void Awake()
     {
@@ -34,6 +35,7 @@ public class ShopItem : MonoBehaviour
             UpdateItemUI();
             ShopManager.Instance.UpdateMoneyInShopUI();
             LockedShopItem.UpdateAllLockedItems();
+            BuyAllItemsAchievement.Instance.CheckIfAllItemsAreMaxLeveled();
         }
     }
 

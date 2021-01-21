@@ -9,6 +9,8 @@ public class BoatCollision : MonoBehaviour, IHeadStartReceiver
     
     [SerializeField] private int lives = 1;
 
+    public bool isInHeadstart { get; private set; }
+
     private void Awake()
     {
         Instance = this;
@@ -103,11 +105,13 @@ public class BoatCollision : MonoBehaviour, IHeadStartReceiver
 
     public void ActivateHeadstart(float speedMultiplier)
     {
+        isInHeadstart = true;
         gameObject.layer = 8;
     }
 
     public void EndHeadstart()
     {
+        isInHeadstart = false;
         StartCoroutine(OnLostLifeWithoutLosing("headstart"));
     }
 }

@@ -26,6 +26,8 @@ public class FinishGameManager : MonoBehaviour
 
         int moneyMadeThisGame = PlayerMoney.Instance.GetMoneyMadeAndSaveMoney();
         moneyText.text = "Money: " + moneyMadeThisGame;
+
+        DontLoseBootyAchievement.Instance.OnGameEnd();
     }
     
     public void CheckIfPlayerCanRestartGame()
