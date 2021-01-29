@@ -7,8 +7,6 @@ public class FinishLine : MonoBehaviour
         if (collision.CompareTag("Entity"))
         {
             collision.GetComponent<EntityType>().OnHitFinishLine();
-            
-            Destroy(collision.gameObject);
         }
         else if (collision.CompareTag("NPC"))
         {

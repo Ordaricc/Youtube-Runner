@@ -21,6 +21,8 @@ public class Orca : EntityType
     public override void StartEntity()
     {
         speed = Random.Range(minSpeed, maxSpeed);
+        xDirection = 1;
+        sr.flipX = false;
 
         if (Random.Range(1, 3) == 1)
         {

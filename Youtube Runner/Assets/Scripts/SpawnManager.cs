@@ -57,13 +57,13 @@ public class SpawnManager : MonoBehaviour, IHeadStartReceiver
     private void SpawnEntity()
     {
         bool isEntityToSpawnAnOctopus;
-        GameObject entityToSpawn = GetMobManager.Instance.GetMob(out isEntityToSpawnAnOctopus);
+        GameObject spawnedEntity = GetMobManager.Instance.GetMob(out isEntityToSpawnAnOctopus);
 
         spawnPosition.x = Random.Range(-xMargin, xMargin);
         if (isEntityToSpawnAnOctopus)
             spawnPosition.x = 0;
 
-        GameObject spawnedEntity = Instantiate(entityToSpawn, spawnPosition, Quaternion.identity);
+        spawnedEntity.transform.position = spawnPosition;
         spawnedEntity.GetComponent<Rigidbody2D>().velocity = new Vector2(0, -entitiesSpeed);
         spawnedEntity.GetComponent<EntityType>().StartEntity();
     }

@@ -48,6 +48,7 @@ public class Whirlwind : EntityType
 
     public override void OnHitFinishLine()
     {
+        base.OnHitFinishLine();
         BoatMovement.Instance.SetWhirlwind(0);
     }
 }

@@ -9,14 +9,14 @@ public class GetMobManager : MonoBehaviour
 
     [SerializeField] private float chanceToSpawnBooty = 50;
 
-    [SerializeField] private GameObject[] entitiesPrefabs;
+    [SerializeField] private EntityType.EntityTypes[] entitiesIDs;
 
     private bool previousSpawnWasOctopus;
 
     private void Awake()
     {
         Instance = this;
-        howManyEnemiesUnlockedMax = entitiesPrefabs.Length - 2;
+        howManyEnemiesUnlockedMax = entitiesIDs.Length - 2;
     }
 
     public void StartScript()
@@ -30,16 +30,15 @@ public class GetMobManager : MonoBehaviour
         if (randomNumberToChooseBetweenBootyOrEnemy <= chanceToSpawnBooty)
         {
             isOctopus = false;
-            return entitiesPrefabs[0];
+            return EntititesMagazine.Instance.RequestEntityFromMagazine(entitiesIDs[0]);//return booty
         }
 
-        GameObject entityToChoose;
+        EntityType.EntityTypes entityToChoose;
         while (true)
         {
             isOctopus = false;
-            entityToChoose = entitiesPrefabs[Random.Range(1, 2 + howManyEnemiesUnlocked)];
-            EntityType.EntityTypes entityType = entityToChoose.GetComponent<EntityType>().entityType;
-            if (entityType == EntityType.EntityTypes.octopus)
+            entityToChoose = entitiesIDs[Random.Range(1, 2 + howManyEnemiesUnlocked)];
+            if (entityToChoose == EntityType.EntityTypes.octopus)
                 isOctopus = true;
 
             if (previousSpawnWasOctopus && isOctopus)
@@ -49,12 +48,12 @@ public class GetMobManager : MonoBehaviour
             else
                 previousSpawnWasOctopus = false;
 
-            UnlockAchievement(entityType);
+            UnlockAchievement(entityToChoose);
 
             break;
         }
-        
-        return entityToChoose;
+
+        return EntititesMagazine.Instance.RequestEntityFromMagazine(entityToChoose);
     }
 
     private void UnlockAchievement(EntityType.EntityTypes entityType)

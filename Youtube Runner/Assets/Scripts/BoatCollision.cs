@@ -32,7 +32,7 @@ public class BoatCollision : MonoBehaviour, IHeadStartReceiver
             if (entityTypeCollidedWith.entityType == EntityType.EntityTypes.booty)
             {
                 PlayerMoney.Instance.CollectBooty(1);
-                Destroy(collision.gameObject);
+                EntititesMagazine.Instance.PutEntityIntoMagazine(collision.gameObject, EntityType.EntityTypes.booty);
             }
             else
             {
@@ -43,11 +43,11 @@ public class BoatCollision : MonoBehaviour, IHeadStartReceiver
                         //CHANGE THIS: make a new function on each entityType script to tell how to destroy them properly
                         if (entityTypeCollidedWith.entityType == EntityType.EntityTypes.tentacle)
                         {
-                            Destroy(collision.gameObject.transform.parent.gameObject);
+                            EntititesMagazine.Instance.PutEntityIntoMagazine(collision.gameObject.transform.parent.gameObject, EntityType.EntityTypes.octopus);                           
                         }
                         else
                         {
-                            Destroy(collision.gameObject);
+                            EntititesMagazine.Instance.PutEntityIntoMagazine(collision.gameObject, entityTypeCollidedWith.entityType);
                         }
                     }
                     else

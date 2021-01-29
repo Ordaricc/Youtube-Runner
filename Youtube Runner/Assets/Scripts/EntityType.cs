@@ -15,6 +15,7 @@ public class EntityType : MonoBehaviour
 
     public virtual void OnHitFinishLine()
     {
-
+        if (entityType != EntityTypes.tentacle)
+            EntititesMagazine.Instance.PutEntityIntoMagazine(gameObject, entityType);
     }
 }
