@@ -2,7 +2,6 @@
 
 public class Orca : EntityType
 {
-    private Rigidbody2D rb;
     private SpriteRenderer sr;
 
     [SerializeField] private float xMargin = 2;
@@ -12,9 +11,9 @@ public class Orca : EntityType
 
     private int xDirection = 1;
     
-    private void Awake()
+    protected override void Awake()
     {
-        rb = GetComponent<Rigidbody2D>();
+        base.Awake();
         sr = GetComponent<SpriteRenderer>();
     }
 

@@ -4387,7 +4387,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemNameText: {fileID: 1281743232}
   itemPriceText: {fileID: 1547280916}
-  ItemType: 5
+  itemType: 5
   itemName: Lantern
   itemPrice: 10
   itemLevel: 0
@@ -4918,7 +4918,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemNameText: {fileID: 415589723}
   itemPriceText: {fileID: 891641991}
-  ItemType: 6
+  itemType: 6
   itemName: Headstart
   itemPrice: 10
   itemLevel: 0
@@ -6227,7 +6227,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemNameText: {fileID: 315510615}
   itemPriceText: {fileID: 1770626060}
-  ItemType: 2
+  itemType: 2
   itemName: Pirate's Luck
   itemPrice: 10
   itemLevel: 0
@@ -6578,7 +6578,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemNameText: {fileID: 637414949}
   itemPriceText: {fileID: 302913881}
-  ItemType: 4
+  itemType: 4
   itemName: Nets
   itemPrice: 10
   itemLevel: 0
@@ -10847,7 +10847,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemNameText: {fileID: 477821277}
   itemPriceText: {fileID: 1318799462}
-  ItemType: 0
+  itemType: 0
   itemName: Stronger Oars
   itemPrice: 10
   itemLevel: 0
@@ -12035,7 +12035,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemNameText: {fileID: 1870295056}
   itemPriceText: {fileID: 1342692658}
-  ItemType: 3
+  itemType: 3
   itemName: Sea Heart
   itemPrice: 10
   itemLevel: 0
@@ -15149,7 +15149,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemNameText: {fileID: 1093091733}
   itemPriceText: {fileID: 760253204}
-  ItemType: 1
+  itemType: 1
   itemName: Pirate's Greed
   itemPrice: 10
   itemLevel: 0

@@ -36,28 +36,22 @@ public class PlayerBonus : MonoBehaviour
         int bonusMoney = 0;
         int randomNum = Random.Range(1, 101);
 
-        while (true)
+        if (randomNum <= 25 && Nets.Instance.CanAddNet)
         {
-            if (randomNum <= 25 && Nets.Instance.netsLevel > 0 && Nets.Instance.canAddNet)
-            {
-                Nets.Instance.AddNet();
-                AnimationPrefabs.Instance.SpawnAnimation("net");
-                break;
-            }
-            else if (randomNum <= 50 && Lantern.Instance.lanternLevel > 0 && Fog.Instance.isFogOn)
-            {
-                Lantern.Instance.AddExtraFuel();
-                AnimationPrefabs.Instance.SpawnAnimation("lantern");
-                break;
-            }
-            else
-            {
-                bonusMoney = Random.Range(1, 11);
-                AnimationPrefabs.Instance.SpawnAnimation("booty");
-                break;
-            }
+            Nets.Instance.AddNet();
+            AnimationPrefabs.Instance.SpawnAnimation("net");
         }
-        
+        else if (randomNum <= 50 && Lantern.Instance.CanAddLanternFuel)
+        {
+            Lantern.Instance.AddExtraFuel();
+            AnimationPrefabs.Instance.SpawnAnimation("lantern");
+        }
+        else
+        {
+            bonusMoney = Random.Range(1, 11);
+            AnimationPrefabs.Instance.SpawnAnimation("booty");
+        }
+
         return bonusMoney;
     }
     

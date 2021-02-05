@@ -64,8 +64,9 @@ public class SpawnManager : MonoBehaviour, IHeadStartReceiver
             spawnPosition.x = 0;
 
         spawnedEntity.transform.position = spawnPosition;
-        spawnedEntity.GetComponent<Rigidbody2D>().velocity = new Vector2(0, -entitiesSpeed);
-        spawnedEntity.GetComponent<EntityType>().StartEntity();
+        EntityType entity = spawnedEntity.GetComponent<EntityType>();
+        entity.StartEntity();
+        entity.UpdateSpeed(entitiesSpeed);
     }
 
     private void IncreaseSpeed()
@@ -86,12 +87,10 @@ public class SpawnManager : MonoBehaviour, IHeadStartReceiver
         if (spawnTimerMax == scaledSpawnTimerMax
             && entitiesSpeed == scaledEntitiesSpeed)
             maxVelocityReached = true;
-
-        GameObject[] entitiesInGame = GameObject.FindGameObjectsWithTag("Entity");
-        foreach (GameObject e in entitiesInGame)
+        
+        foreach (GameObject e in EntititesMagazine.entitiesInGame)
         {
-            if (e.TryGetComponent(out Rigidbody2D entityRB))
-                entityRB.velocity = new Vector2(entityRB.velocity.x, -entitiesSpeed);
+            e.GetComponent<EntityType>().UpdateSpeed(entitiesSpeed);
         }
     }
 

@@ -11,7 +11,7 @@ public class Nets : MonoBehaviour
     [SerializeField] private int netsAvailable;
     public int netsLevel { get; private set; }
     
-    public bool canAddNet { get { return netsAvailable < netsLevel; } }
+    public bool CanAddNet { get { return netsAvailable < netsLevel && Instance.netsLevel > 0; } }
 
     public int defeatedEnemies { get; private set; }
 

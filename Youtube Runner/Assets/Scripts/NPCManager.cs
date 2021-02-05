@@ -6,6 +6,8 @@ public class NPCManager : MonoBehaviour
     public static NPCManager Instance;
 
     [SerializeField] private NPC currentNPC;
+    public NPC _currentNPC { get { return currentNPC; } }
+
     [SerializeField] private GameObject dialogueBox;
     [SerializeField] private TextMeshProUGUI dialogueBoxText;
     public TextMeshProUGUI _dialogueBoxText { get { return dialogueBoxText; } }

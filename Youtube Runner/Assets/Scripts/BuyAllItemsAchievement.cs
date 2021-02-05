@@ -15,7 +15,7 @@ public class BuyAllItemsAchievement : MonoBehaviour
     {
         foreach (ShopItem s in shopItems)
         {
-            if (PlayerPrefs.GetInt(s.ItemType.ToString()) != s._itemLevelMax)
+            if (PlayerPrefs.GetInt(s._itemType.ToString()) != s._itemLevelMax)
                 return;
         }
 

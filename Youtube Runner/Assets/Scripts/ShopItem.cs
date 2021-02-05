@@ -8,7 +8,9 @@ public class ShopItem : MonoBehaviour
     [SerializeField] private TextMeshProUGUI itemPriceText;
 
     [Header("Values")]
-    public ShopItems ItemType;
+    [SerializeField] private ShopItems itemType;
+    public ShopItems _itemType { get { return itemType; } }
+
     public enum ShopItems { strongerOars, pirateGreed, pirateLuck, seaHeart, nets, lantern, headstart, dummyItem4 }
 
     [SerializeField] private string itemName = "Placeholder";
@@ -28,7 +30,7 @@ public class ShopItem : MonoBehaviour
             && PlayerMoney.Instance.ReturnCurrentMoney() >= itemPrice)
         {
             itemLevel++;
-            PlayerPrefs.SetInt(ItemType.ToString(), itemLevel);
+            PlayerPrefs.SetInt(itemType.ToString(), itemLevel);
 
             PlayerMoney.Instance.AddMoneyAndSave(-itemPrice);
 
@@ -41,7 +43,7 @@ public class ShopItem : MonoBehaviour
 
     private void UpdateItemUI()
     {
-        itemLevel = PlayerPrefs.GetInt(ItemType.ToString());
+        itemLevel = PlayerPrefs.GetInt(itemType.ToString());
 
         itemNameText.text = "LV. " + itemLevel + " " + itemName;
         itemPriceText.text = itemPrice + " G";

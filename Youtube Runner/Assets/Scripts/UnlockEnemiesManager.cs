@@ -48,6 +48,7 @@ public class UnlockEnemiesManager : MonoBehaviour
 
             case 7:
                 NPCQuests.OnUnlockAllEnemies();
+                enabled = false;
                 break;
         }
     }

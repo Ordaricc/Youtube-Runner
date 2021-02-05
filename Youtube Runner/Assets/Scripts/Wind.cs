@@ -21,6 +21,9 @@ public class Wind : MonoBehaviour
     private bool isWindUnlocked;
     private bool isWindOn;
 
+    private readonly Vector3 normalFlagScale = Vector3.one;
+    private readonly Vector3 invertedFlagScale = new Vector3(-1, 1, 1);
+
     private void Awake()
     {
         Instance = this;
@@ -70,11 +73,11 @@ public class Wind : MonoBehaviour
 
         if (windForce > 0)
         {
-            windFlagImageRect.localScale = new Vector3(1, 1, 1);
+            windFlagImageRect.localScale = normalFlagScale;
         }
         else
         {
-            windFlagImageRect.localScale = new Vector3(-1, 1, 1);
+            windFlagImageRect.localScale = invertedFlagScale;
         }
     }
 

@@ -13,6 +13,12 @@ public class PauseManager : MonoBehaviour
     private bool canPause = true;
     private float timeBeforePause;
 
+    private void Awake()
+    {
+        if (!Application.isMobilePlatform)
+            enabled = false;
+    }
+
     private void Update()
     {
         if (Input.GetKeyDown(KeyCode.P))

@@ -13,6 +13,9 @@ public class Lantern : MonoBehaviour
 
     public int lanternLevel { get; private set; }
     private int lanternFuel;
+    public bool CanAddLanternFuel { get { return lanternLevel > 0 && Fog.Instance.isFogOn; } }
+
+    private WaitForSeconds lanternTick = new WaitForSeconds(1);
 
     private void Awake()
     {
@@ -30,7 +33,7 @@ public class Lantern : MonoBehaviour
         while (lanternFuel > 0)
         {
             lanternFuelText.text = lanternFuel.ToString();
-            yield return new WaitForSeconds(1);
+            yield return lanternTick;
             lanternFuel--;
 
             if (lanternFuel == 0)

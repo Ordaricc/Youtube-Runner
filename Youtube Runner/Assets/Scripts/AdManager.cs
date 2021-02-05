@@ -12,6 +12,7 @@ public class AdManager : MonoBehaviour, IUnityAdsListener
     private const string rewardedVideo = "rewardedVideo";
 
     private IAdManagerListener callback;
+    private WaitForSecondsRealtime adDelay = new WaitForSecondsRealtime(0.25f);
 
     private void Awake()
     {
@@ -41,9 +42,7 @@ public class AdManager : MonoBehaviour, IUnityAdsListener
     private IEnumerator WatchAd(bool isAdRewarded)
     {
         string videoID = isAdRewarded ? rewardedVideo : skippableVideo;
-
-        //string videoID = isAdRewarded ? rewardedVideo : "";
-
+        
         int i = 0;
         while (i < 10)
         {
@@ -53,7 +52,7 @@ public class AdManager : MonoBehaviour, IUnityAdsListener
                 Advertisement.Show(videoID);
                 yield break;
             }
-            yield return new WaitForSecondsRealtime(0.25f);
+            yield return adDelay;
         }
     }
 

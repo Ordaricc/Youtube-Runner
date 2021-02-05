@@ -10,7 +10,7 @@ public class FinishLine : MonoBehaviour
         }
         else if (collision.CompareTag("NPC"))
         {
-            collision.GetComponent<NPC>().DisableNPC();
+            NPCManager.Instance._currentNPC.DisableNPC();
         }
     }
 }

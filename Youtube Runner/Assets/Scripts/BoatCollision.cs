@@ -10,6 +10,7 @@ public class BoatCollision : MonoBehaviour, IHeadStartReceiver
     [SerializeField] private int lives = 1;
 
     public bool isInHeadstart { get; private set; }
+    private WaitForSeconds hitAnimation = new WaitForSeconds(0.125f);
 
     private void Awake()
     {
@@ -28,38 +29,8 @@ public class BoatCollision : MonoBehaviour, IHeadStartReceiver
         if (collision.CompareTag("Entity"))
         {
             EntityType entityTypeCollidedWith = collision.GetComponent<EntityType>();
-
-            if (entityTypeCollidedWith.entityType == EntityType.EntityTypes.booty)
-            {
-                PlayerMoney.Instance.CollectBooty(1);
-                EntititesMagazine.Instance.PutEntityIntoMagazine(collision.gameObject, EntityType.EntityTypes.booty);
-            }
-            else
-            {
-                if (entityTypeCollidedWith._isAnimal)
-                {
-                    if (Nets.Instance.TryRemoveNet())
-                    {
-                        //CHANGE THIS: make a new function on each entityType script to tell how to destroy them properly
-                        if (entityTypeCollidedWith.entityType == EntityType.EntityTypes.tentacle)
-                        {
-                            EntititesMagazine.Instance.PutEntityIntoMagazine(collision.gameObject.transform.parent.gameObject, EntityType.EntityTypes.octopus);                           
-                        }
-                        else
-                        {
-                            EntititesMagazine.Instance.PutEntityIntoMagazine(collision.gameObject, entityTypeCollidedWith.entityType);
-                        }
-                    }
-                    else
-                    {
-                        OnHitEnemy();
-                    }
-                }
-                else
-                {
-                    OnHitEnemy();
-                }
-            }
+            if (entityTypeCollidedWith.OnHitPlayerLoseLife())
+                OnHitEnemy();
         }
     }
 
@@ -88,9 +59,9 @@ public class BoatCollision : MonoBehaviour, IHeadStartReceiver
         {
             i++;
             sr.enabled = false;
-            yield return new WaitForSeconds(0.125f);
+            yield return hitAnimation;
             sr.enabled = true;
-            yield return new WaitForSeconds(0.125f);
+            yield return hitAnimation;
         }
         
         Time.timeScale = 1;
