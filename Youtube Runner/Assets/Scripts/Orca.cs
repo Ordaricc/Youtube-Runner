@@ -2,8 +2,6 @@
 
 public class Orca : EntityType
 {
-    private SpriteRenderer sr;
-
     [SerializeField] private float xMargin = 2;
     [SerializeField] private float speed;
     [SerializeField] private float minSpeed = 5;
@@ -11,12 +9,6 @@ public class Orca : EntityType
 
     private int xDirection = 1;
     
-    protected override void Awake()
-    {
-        base.Awake();
-        sr = GetComponent<SpriteRenderer>();
-    }
-
     public override void StartEntity()
     {
         speed = Random.Range(minSpeed, maxSpeed);

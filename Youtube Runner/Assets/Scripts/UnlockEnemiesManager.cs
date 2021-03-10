@@ -2,6 +2,7 @@
 
 public class UnlockEnemiesManager : MonoBehaviour
 {
+    [SerializeField] private Animator yardsTextAnim;
     [SerializeField] private int yardsToBeAtToIncreaseDifficulty;
     private int previousYardsMet;
     private int difficultyLevel;
@@ -19,6 +20,8 @@ public class UnlockEnemiesManager : MonoBehaviour
 
     private void IncreaseDifficulty()
     {
+        yardsTextAnim.Play("TextPopUp");
+        //AudioManager.Instance.PlayClipByName("unlockEnemySound");
         difficultyLevel++;
         switch (difficultyLevel)
         {

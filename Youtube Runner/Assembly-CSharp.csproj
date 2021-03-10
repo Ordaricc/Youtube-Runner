@@ -62,7 +62,7 @@
     <Compile Include="Assets\Scripts\TutorialManager.cs" />
     <Compile Include="Assets\Scripts\AchievementsManager.cs" />
     <Compile Include="Assets\Scripts\ChooseLanguageManager.cs" />
-    <Compile Include="Assets\Scripts\NewLanguageManager.cs" />
+    <Compile Include="Assets\Scripts\LanguageManager.cs" />
     <Compile Include="Assets\Scripts\URLsManager.cs" />
     <Compile Include="Assets\Scripts\WatchAdWhenLosing.cs" />
     <Compile Include="Assets\Scripts\NPCdialoguesMagazine.cs" />
@@ -133,7 +133,7 @@
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\VertexColorCycler.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\VertexZoom.cs" />
     <Compile Include="Assets\Scripts\ChangeLanguageManager.cs" />
-    <Compile Include="Assets\Scripts\NewTextChanger.cs" />
+    <Compile Include="Assets\Scripts\TextChanger.cs" />
     <Compile Include="Assets\Scripts\NPCManager.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMPro_InstructionOverlay.cs" />
     <Compile Include="Assets\Scripts\DontLoseBootyAchievement.cs" />

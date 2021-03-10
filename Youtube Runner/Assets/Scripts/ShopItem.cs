@@ -3,7 +3,9 @@ using TMPro;
 
 public class ShopItem : MonoBehaviour
 {
-    [Header("Texts")]
+    [Header("UI")]
+    [SerializeField] private GameObject itemDescriptionTextGo;
+    [SerializeField] private GameObject itemImageGo;
     [SerializeField] private TextMeshProUGUI itemNameText;
     [SerializeField] private TextMeshProUGUI itemPriceText;
 
@@ -53,5 +55,11 @@ public class ShopItem : MonoBehaviour
             itemNameText.text = "MAX LV: " + itemName;
             itemPriceText.text = "0 G";
         }
+    }
+
+    public void ToggleItemDescription()
+    {
+        itemImageGo.SetActive(!itemImageGo.activeSelf);
+        itemDescriptionTextGo.SetActive(!itemDescriptionTextGo.activeSelf);
     }
 }

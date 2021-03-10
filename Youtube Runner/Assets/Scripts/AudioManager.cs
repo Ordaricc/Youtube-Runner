@@ -4,6 +4,8 @@ using UnityEngine.UI;
 
 public class AudioManager : MonoBehaviour
 {
+    public static AudioManager Instance;
+
     [SerializeField] private Image muteButtonImage;
 
     [SerializeField] private Sprite audioOnSprite;
@@ -15,6 +17,8 @@ public class AudioManager : MonoBehaviour
 
     private void Awake()
     {
+        Instance = this;
+
         if (PlayerPrefs.HasKey(prefAudioMute))
             AudioListener.volume = PlayerPrefs.GetFloat(prefAudioMute);
 

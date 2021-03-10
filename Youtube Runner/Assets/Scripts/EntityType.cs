@@ -3,6 +3,7 @@
 public class EntityType : MonoBehaviour
 {
     protected Rigidbody2D rb;
+    protected SpriteRenderer sr;
 
     public enum EntityTypes { booty, rock, octopus, tentacle, orca, whirlwind }
     public EntityTypes entityType;
@@ -13,11 +14,12 @@ public class EntityType : MonoBehaviour
     protected virtual void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
+        sr = GetComponent<SpriteRenderer>();
     }
 
     public virtual void StartEntity()
     {
-
+        sr.flipX = Random.Range(1, 3) == 1;
     }
 
     public void UpdateSpeed(float newSpeed)

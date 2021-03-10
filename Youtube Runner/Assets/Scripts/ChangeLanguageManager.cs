@@ -27,7 +27,7 @@ public class ChangeLanguageManager : MonoBehaviour
 
     private static void UpdateAllTexts()
     {
-        NewTextChanger[] textsToUpdate = FindObjectsOfType<NewTextChanger>();
+        TextChanger[] textsToUpdate = FindObjectsOfType<TextChanger>();
         foreach (var t in textsToUpdate)
         {
             t.UpdateText();
