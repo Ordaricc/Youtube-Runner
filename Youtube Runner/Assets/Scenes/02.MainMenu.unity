@@ -534,7 +534,7 @@ Camera:
   near clip plane: 0.3
   far clip plane: 1000
   field of view: 60
-  orthographic: 0
+  orthographic: 1
   orthographic size: 5
   m_Depth: -1
   m_CullingMask:
@@ -578,7 +578,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cameraWidth: 360
-  cameraHeight: 725
+  cameraHeight: 740
 --- !u!1 &705195997
 GameObject:
   m_ObjectHideFlags: 0
@@ -725,7 +725,7 @@ MonoBehaviour:
   m_UiScaleMode: 1
   m_ReferencePixelsPerUnit: 100
   m_ScaleFactor: 1
-  m_ReferenceResolution: {x: 360, y: 725}
+  m_ReferenceResolution: {x: 360, y: 740}
   m_ScreenMatchMode: 0
   m_MatchWidthOrHeight: 1
   m_PhysicalUnit: 3
@@ -1205,7 +1205,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 39.35
+  m_fontSize: 40.15
   m_fontSizeBase: 36
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -1333,7 +1333,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1360925341}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -2.4, y: -1.47, z: -3.4438312}
+  m_LocalPosition: {x: -3.44, y: -1.47, z: -3.4438312}
   m_LocalScale: {x: 0.078839235, y: 0.078839235, z: 0.078839235}
   m_Children: []
   m_Father: {fileID: 0}
@@ -1583,7 +1583,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1646105035}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -3.16, y: -3.21, z: -3.4438312}
+  m_LocalPosition: {x: -3.227, y: -3.21, z: -3.4438312}
   m_LocalScale: {x: 0.078839235, y: 0.078839235, z: 0.078839235}
   m_Children: []
   m_Father: {fileID: 0}

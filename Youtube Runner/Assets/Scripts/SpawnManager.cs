@@ -88,7 +88,7 @@ public class SpawnManager : MonoBehaviour, IHeadStartReceiver
             && entitiesSpeed == scaledEntitiesSpeed)
             maxVelocityReached = true;
         
-        foreach (GameObject e in EntititesMagazine.entitiesInGame)
+        foreach (GameObject e in EntitiesMagazine.Instance.entitiesInGame)
         {
             e.GetComponent<EntityType>().UpdateSpeed(entitiesSpeed);
         }

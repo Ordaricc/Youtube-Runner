@@ -31,7 +31,7 @@ public class EntityType : MonoBehaviour
     public virtual void OnHitFinishLine()
     {
         if (entityType != EntityTypes.tentacle)
-            EntititesMagazine.Instance.PutEntityIntoMagazine(gameObject, entityType);
+            EntitiesMagazine.Instance.PutEntityIntoMagazine(gameObject, entityType);
     }
 
     public bool OnHitPlayerLoseLife()
@@ -39,7 +39,7 @@ public class EntityType : MonoBehaviour
         if (entityType == EntityTypes.booty)
         {
             PlayerMoney.Instance.CollectBooty(1);
-            EntititesMagazine.Instance.PutEntityIntoMagazine(gameObject, EntityTypes.booty);
+            EntitiesMagazine.Instance.PutEntityIntoMagazine(gameObject, EntityTypes.booty);
             return false;
         }
         else
@@ -50,11 +50,11 @@ public class EntityType : MonoBehaviour
                 {
                     if (entityType == EntityTypes.tentacle)
                     {
-                        EntititesMagazine.Instance.PutEntityIntoMagazine(gameObject.transform.parent.gameObject, EntityTypes.octopus);
+                        EntitiesMagazine.Instance.PutEntityIntoMagazine(gameObject.transform.parent.gameObject, EntityTypes.octopus);
                     }
                     else
                     {
-                        EntititesMagazine.Instance.PutEntityIntoMagazine(gameObject, entityType);
+                        EntitiesMagazine.Instance.PutEntityIntoMagazine(gameObject, entityType);
                     }
                     return false;
                 }

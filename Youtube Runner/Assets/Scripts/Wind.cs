@@ -83,7 +83,7 @@ public class Wind : MonoBehaviour
 
     public void ActivateWind()
     {
-        AchievementsManager.Instance.UnlockAchievement(Achievement.AchievemntTypes.wind);
+        AchievementsManager.Instance.UnlockAchievement(Achievement.AchievementTypes.wind);
 
         isWindUnlocked = true;
         isWindOn = true;

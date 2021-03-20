@@ -12,7 +12,7 @@ public class AchievementsManager : MonoBehaviour
         Instance = this;
     }
 
-    public void UnlockAchievement(Achievement.AchievemntTypes achievementType)
+    public void UnlockAchievement(Achievement.AchievementTypes achievementType)
     {
         if (PlayerPrefs.GetInt(achievementType.ToString()) == 1)
             return;

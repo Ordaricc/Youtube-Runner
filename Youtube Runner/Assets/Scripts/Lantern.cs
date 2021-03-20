@@ -60,6 +60,8 @@ public class Lantern : MonoBehaviour
         if (lanternFuel == 0)
         {
             lanternFuel += lanternLevel * 10;
+            fogSpriteGO.SetActive(false);
+            lanternUIPanel.SetActive(true);
             StartCoroutine(TickLantern());
         }
         else

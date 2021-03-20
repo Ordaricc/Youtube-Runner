@@ -66,7 +66,7 @@ public class Nets : MonoBehaviour
         {
             defeatedEnemies++;
             if (defeatedEnemies == 5)
-                AchievementsManager.Instance.UnlockAchievement(Achievement.AchievemntTypes.defeatEnemiesInSingleRun);
+                AchievementsManager.Instance.UnlockAchievement(Achievement.AchievementTypes.defeatEnemiesInSingleRun);
 
             netsAvailable--;
             UpdateNetsUI();

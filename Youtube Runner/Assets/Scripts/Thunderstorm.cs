@@ -19,7 +19,7 @@ public class Thunderstorm : MonoBehaviour
     public void ActivateThunderstorm()
     {
         if (AchievementsManager.Instance != null)//check if we are in the game and not the main menu
-            AchievementsManager.Instance.UnlockAchievement(Achievement.AchievemntTypes.thunderstorm);
+            AchievementsManager.Instance.UnlockAchievement(Achievement.AchievementTypes.thunderstorm);
 
         nightPanelAnimator.Play("FadeInNight");
         StartCoroutine(ThunderstormLoop());

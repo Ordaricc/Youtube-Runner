@@ -26,6 +26,6 @@ public class DontLoseBootyAchievement : MonoBehaviour
     public void OnGameEnd()
     {
         if (!hasPlayerLostBootyThisGame && YardsManager.Instance.yardsTraveled >= minimumAmountOfYardsTraveled)
-            AchievementsManager.Instance.UnlockAchievement(Achievement.AchievemntTypes.dontLoseBootyInARun);
+            AchievementsManager.Instance.UnlockAchievement(Achievement.AchievementTypes.dontLoseBootyInARun);
     }
 }

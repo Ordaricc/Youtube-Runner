@@ -42,6 +42,6 @@ public class Fog : MonoBehaviour
 
         Lantern.Instance.ActivateLantern();
 
-        AchievementsManager.Instance.UnlockAchievement(Achievement.AchievemntTypes.seeFog);
+        AchievementsManager.Instance.UnlockAchievement(Achievement.AchievementTypes.seeFog);
     }
 }

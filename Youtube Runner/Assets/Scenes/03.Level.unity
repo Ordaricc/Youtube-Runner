@@ -3981,7 +3981,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   yMarginForInput: 2.35
   xMargin: 2
-  boatSpeed: 250
+  boatSpeed: 3
 --- !u!50 &459855618
 Rigidbody2D:
   serializedVersion: 4
@@ -6703,7 +6703,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 1, y: 0.822}
-  m_AnchoredPosition: {x: 9.784836, y: 47.97218}
+  m_AnchoredPosition: {x: 9.784836, y: 47.972183}
   m_SizeDelta: {x: -19.569733, y: 36.35498}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &747525694
@@ -7831,8 +7831,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   windFlagImageRect: {fileID: 527194828}
-  windForceMin: 25
-  windForceMax: 75
+  windForceMin: 0.25
+  windForceMax: 2
   windOnTimerMin: 1
   windOnTimerMax: 3
   windOffTimerMin: 1
@@ -11472,7 +11472,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.822}
-  m_AnchoredPosition: {x: -9.785427, y: 47.972176}
+  m_AnchoredPosition: {x: -9.785431, y: 47.972176}
   m_SizeDelta: {x: -19.569733, y: 36.35498}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1384553334
@@ -15535,7 +15535,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.114659, y: 0.2436207}
   m_AnchorMax: {x: 0.9221764, y: 0.7552759}
-  m_AnchoredPosition: {x: -1.3047028, y: 2.63031}
+  m_AnchoredPosition: {x: -1.3046875, y: 2.63031}
   m_SizeDelta: {x: -0.9205322, y: 0.63049316}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1858920964
@@ -15920,7 +15920,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.17944828}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -9.785427, y: -48.2669}
+  m_AnchoredPosition: {x: -9.785431, y: -48.266903}
   m_SizeDelta: {x: -19.569733, y: 36.84321}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1868688818
@@ -16978,7 +16978,7 @@ Animator:
   m_Avatar: {fileID: 0}
   m_Controller: {fileID: 9100000, guid: 47f2a69e37c3060439444b8c18eefcdb, type: 2}
   m_CullingMode: 0
-  m_UpdateMode: 0
+  m_UpdateMode: 2
   m_ApplyRootMotion: 0
   m_LinearVelocityBlending: 0
   m_WarningMessage: 

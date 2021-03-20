@@ -30,7 +30,7 @@ public class GetMobManager : MonoBehaviour
         if (randomNumberToChooseBetweenBootyOrEnemy <= chanceToSpawnBooty)
         {
             isOctopus = false;
-            return EntititesMagazine.Instance.RequestEntityFromMagazine(entitiesIDs[0]);//return booty
+            return EntitiesMagazine.Instance.RequestEntityFromMagazine(entitiesIDs[0]);//return booty
         }
 
         EntityType.EntityTypes entityToChoose;
@@ -53,7 +53,7 @@ public class GetMobManager : MonoBehaviour
             break;
         }
 
-        return EntititesMagazine.Instance.RequestEntityFromMagazine(entityToChoose);
+        return EntitiesMagazine.Instance.RequestEntityFromMagazine(entityToChoose);
     }
 
     private void UnlockAchievement(EntityType.EntityTypes entityType)
@@ -61,15 +61,15 @@ public class GetMobManager : MonoBehaviour
         switch (entityType)
         {
             case EntityType.EntityTypes.octopus:
-                AchievementsManager.Instance.UnlockAchievement(Achievement.AchievemntTypes.ocotpus);
+                AchievementsManager.Instance.UnlockAchievement(Achievement.AchievementTypes.ocotpus);
                 break;
 
             case EntityType.EntityTypes.orca:
-                AchievementsManager.Instance.UnlockAchievement(Achievement.AchievemntTypes.horca);
+                AchievementsManager.Instance.UnlockAchievement(Achievement.AchievementTypes.horca);
                 break;
 
             case EntityType.EntityTypes.whirlwind:
-                AchievementsManager.Instance.UnlockAchievement(Achievement.AchievemntTypes.whirlwind);
+                AchievementsManager.Instance.UnlockAchievement(Achievement.AchievementTypes.whirlwind);
                 break;
         }
     }

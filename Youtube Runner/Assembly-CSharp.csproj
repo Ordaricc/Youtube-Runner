@@ -94,7 +94,7 @@
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\ChatController.cs" />
     <Compile Include="Assets\Scripts\AnimationPrefabs.cs" />
     <Compile Include="Assets\Scripts\YardsManager.cs" />
-    <Compile Include="Assets\Scripts\EntititesMagazine.cs" />
+    <Compile Include="Assets\Scripts\EntitiesMagazine.cs" />
     <Compile Include="Assets\Scripts\MoveTowards.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_ExampleScript_01.cs" />
     <Compile Include="Assets\Scripts\Language.cs" />

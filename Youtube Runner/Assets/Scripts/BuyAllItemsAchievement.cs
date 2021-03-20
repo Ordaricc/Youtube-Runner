@@ -19,6 +19,6 @@ public class BuyAllItemsAchievement : MonoBehaviour
                 return;
         }
 
-        AchievementsManager.Instance.UnlockAchievement(Achievement.AchievemntTypes.buyAllItems);
+        AchievementsManager.Instance.UnlockAchievement(Achievement.AchievementTypes.buyAllItems);
     }
 }

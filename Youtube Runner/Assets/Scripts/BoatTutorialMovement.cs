@@ -21,26 +21,29 @@ public class BoatTutorialMovement : MonoBehaviour
         mainCamera = Camera.main;
     }
 
-    private void FixedUpdate()
+    private void Update()
     {
         if (!canMove)
             return;
 
-        int dirX = 0;
-        transform.rotation = Quaternion.Euler(0, 0, 0);
+        int directionX = TakeInput();
+        transform.rotation = Quaternion.Euler(0, 0, -30 * directionX);
+
+        rb.velocity = new Vector2(directionX * boatSpeed, 0);
+
+        ClampPositionWithinScreen();
+    }
+
+    private int TakeInput()
+    {
+        int directionX = 0;
 
         if (Application.isEditor)
         {
             if (Input.GetKey(KeyCode.D))
-            {
-                dirX = 1;
-                transform.rotation = Quaternion.Euler(0, 0, -30);
-            }
+                directionX = 1;
             else if (Input.GetKey(KeyCode.A))
-            {
-                dirX = -1;
-                transform.rotation = Quaternion.Euler(0, 0, 30);
-            }
+                directionX = -1;
         }
         else//if application.isMobile
         {
@@ -49,25 +52,17 @@ public class BoatTutorialMovement : MonoBehaviour
                 Vector3 touchPosition = Input.touches[0].position;
                 touchPosition = mainCamera.ScreenToWorldPoint(touchPosition);
 
-                if (touchPosition.x < yMarginForInput)
+                if (touchPosition.y < yMarginForInput)
                 {
                     if (touchPosition.x > 0)
-                    {
-                        dirX = 1;
-                        transform.rotation = Quaternion.Euler(0, 0, -30);
-                    }
+                        directionX = 1;
                     else
-                    {
-                        dirX = -1;
-                        transform.rotation = Quaternion.Euler(0, 0, 30);
-                    }
+                        directionX = -1;
                 }
             }
         }
 
-        rb.velocity = new Vector2(dirX * boatSpeed * Time.fixedDeltaTime, 0);
-
-        ClampPositionWithinScreen();
+        return directionX;
     }
 
     private void ClampPositionWithinScreen()
